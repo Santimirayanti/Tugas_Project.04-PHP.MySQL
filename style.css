@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a/* General Styles */
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Georgia, serif;
+  background-color: #ead6eb; /* Warna putih */
+}
+
+/* Layout Styles */
+.wrapper {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+/* Header Styles */
+.logo a {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: "Times New Roman", Georgia, serif;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #6420aa;
+}
+
+.menu {
+  float: right;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #7469b6; /* Warna ungu */
+  z-index: 1;
+  border-bottom: 1px solid #ad88c6;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: rgb(79, 18, 97);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #6420aa;
+}
+
+/* Content Styles */
+section {
+  margin-bottom: 50px;
+}
+
+.column {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.column .description {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: "Times New Roman", Georgia, serif;
+  color: #ad88c6;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #39393c;
+  line-height: 1.2;
+}
+
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ad88c6;
+  line-height: 1.2;
+}
+
+a.button-blue,
+a.button-pink {
+  display: inline-block;
+  background-color: #7469b6;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 15px 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+a.button-blue:hover,
+a.button-pink:hover {
+  background-color: #6420aa;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.gallery-item {
+  flex: 0 0 300px;
+  width: 300px;
+  margin-right: 20px;
+  position: relative; /* Tambahkan properti position */
+  overflow: hidden; /* Tambahkan properti overflow */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  flex-basis: calc(
+    33.33% - 20px
+  ); /* Mengatur lebar item menjadi 33.33% dengan jarak 20px antar item */
+  margin-bottom: 20px; /* Menambahkan jarak bawah antar item */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Efek membesar saat hover */
+}
+
+.gallery-item img {
+  width: 100%;
+  transition: transform 0.5s ease; /* Tambahkan transisi */
+  height: 200px; /* Tetapkan tinggi gambar */
+  object-fit: cover; /* Memastikan gambar mengisi kotak tanpa merubah aspek rasio */
+  border-radius: 10px; /* Tambahkan sudut melengkung pada gambar */
+}
+
+.gallery-item p {
+  margin-top: 10px;
+  font-family: "Times New Roman", Georgia, serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #39393c;
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Tambahkan lapisan gelap */
+  opacity: 0; /* Awalnya tidak terlihat */
+  transition: opacity 0.3s ease; /* Efek transparansi saat hover */
+}
+
+.gallery-item:hover::before {
+  opacity: 1; /* Tampilkan lapisan gelap saat hover */
+}
+
+.gallery-item:hover p {
+  opacity: 0; /* Sembunyikan teks saat hover */
+}
+
+.gallery-list {
+  display: flex; /* Menggunakan flexbox */
+  flex-wrap: nowrap; /* Agar item tidak terbungkus (tidak wrap) */
+  overflow-x: auto; /* Penanganan overflow horizontal jika konten lebih lebar dari wadah */
+  justify-content: space-between; /* Menyebarkan item secara merata */
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer Styles */
+#contact {
+  background-color: #7469b6;
+  padding: 50px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-section {
+  width: 25%;
+  margin: 0 10px;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+/* Copyright Styles */
+#copyright {
+  background-color: #ffffff;
+  color: #7469b6;
+  padding: 10px 0;
+  text-align: center;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Tambahkan sudut melengkung */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  transition: transform 0.3s ease; /* Efek transisi saat hover */
+}
+
+article img:hover {
+  transform: scale(1.05); /* Efek membesar saat hover */
+}
+
+/*contact section*/
+#contact {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+#contact h1 {
+  margin: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.input {
+  padding: 15px 20px;
+  margin: 15px;
+  width: 40px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+}
+
+#message {
+  margin: 15px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#btn {
+  padding: 15px 20px;
+  margin: 30px;
+  width: 15%;
+  border-radius: 20px;
+  background-color: black;
+  color: aliceblue;
+  border: none;
+  outline: none;
+}
+
+#btn:hover {
+  background-color: aqua;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+/*footer section*/
+footer {
+  background: #111;
+  padding: 15px 20px;
+  color: aliceblue;
+  text-align: center;
+}
+
+/*Home Section*/
+#home {
+  display: flex;
+  flex-direction: column;
+  height: 900px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: #111;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("ProfilSanti.png") no-repeat center center/cover;
+  height: 900px;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.heading {
+  color: rgb(0, 5, 8);
+  font-size: 3rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  transform: scale(1, 1.3);
+}
+
+namecolor {
+  color: aqua;
+}
+
+.btnlogin {
+  background-color: aqua;
+  color: aliceblue;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 5px 25px;
+  transition: transform 0.4s;
+}
+.btnlogin:hover {
+  transform: scale(1.1);
+}
